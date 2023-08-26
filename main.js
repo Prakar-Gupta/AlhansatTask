@@ -8,7 +8,7 @@ addbutton.addEventListener('click', async () => {
 
     if (input) {
         try {
-            const response = await fetch('http://localhost:3000/api/', {
+            const response = await fetch('https://alphanset-backend.vercel.app/api/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ function createTaskCard(task, index) {
             newStaus = 'Done'
         }
         try {
-            const response = await fetch(`http://localhost:3000/api/${task._id}`, {
+            const response = await fetch(`https://alphanset-backend.vercel.app/api/${task._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ function createTaskCard(task, index) {
         const editName = window.prompt('Enter the editted name:')
         if (editName != '') {
             try {
-                const response = await fetch(`http://localhost:3000/api/${task._id}`, {
+                const response = await fetch(`https://alphanset-backend.vercel.app/api/${task._id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ function createTaskCard(task, index) {
 
     deleteIcon.addEventListener('click', async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/${task._id}`, {
+            const response = await fetch(`https://alphanset-backend.vercel.app/api/${task._id}`, {
                 method: 'DELETE'
             });
 
@@ -203,7 +203,7 @@ Status.addEventListener('change', () => {
 
 async function getTasks(selectedStatus) {
     try {
-        const response = await fetch('http://localhost:3000/api/');
+        const response = await fetch('https://alphanset-backend.vercel.app/api/');
         if (response.ok) {
             const tasks = await response.json();
             tasks
